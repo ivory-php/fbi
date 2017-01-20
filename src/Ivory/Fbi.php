@@ -1,6 +1,6 @@
 <?php
 
-namespace Ivory\Support;
+namespace Ivory;
 
 use String;
 use Int;
