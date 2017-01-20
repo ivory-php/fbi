@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Support;
+namespace Ivory\Support;
 
 use String;
 use Int;
@@ -34,13 +34,28 @@ class Fbi {
 	 * -T 2 is the local display attached for someone using SSH. 
 	 * @param string $frameBuffer 
 	 */
-	public function __construct($frameBuffer = '-T 1')
+	public function __construct()
 	{
-		$this->options[] = $frameBuffer;
-		$this->options[] = '-a';
-		$this->options[] = '--noverbose';
-		$this->forDevice();
+		$this
+		// Set the default Frame Buffer
+		->withFrameBuffer('1')
+		// Set the default device
+		->forDevice()
+		// Set No Verbose by default
+		->withoutStatusBar();
+		
+	}
 
+	/**
+	 * Which Framebuffer Should be used. 1 is default.
+	 * @param  int $frameBuffer 
+	 * @return $this
+	 */
+	public function withFrameBuffer($frameBuffer)
+	{
+		$this->options['T'] = $frameBuffer;
+
+		return $this;
 	}
 
 	/**
