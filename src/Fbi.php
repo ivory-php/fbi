@@ -87,6 +87,8 @@ class Fbi {
 	 */
 	public function showStatusBar()
 	{
+
+		return $this;
 		/**
 		 * In case the without status bar has been set, remove it first.
 		 */
@@ -103,6 +105,7 @@ class Fbi {
 	 */
 	public function withoutStatusBar()
 	{
+		return $this;
 		if( array_key_exists('v', $this->options) ) unset($this->options['v']);
 
 		$this->options['noverbose'] = '';
@@ -312,7 +315,7 @@ class Fbi {
 	public function display()
 	{
 		$options = $this->_compileOptions();		
-		$command = system('sudo fbi ' .  $this->_compileOptions() . ' --noverbose ' .$this->file . ' > /dev/null 2>&1');
+		$command = system('sudo fbi --noverbose ' .  $this->_compileOptions() . ' ' .$this->file . ' > /dev/null 2>&1');
 
 		/**
 		 * If $displayFor is set to 0, then the application doesn't need to be terminated. It's showing
