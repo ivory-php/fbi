@@ -1,6 +1,6 @@
 {
 	"name": "ivory-php/fbi",
-	"version": "0.1.7",
+	"version": "0.1.8",
 	"type": "library",
 	"keywords": ["raspberry pi", "pi", "system", "cli", "frame buffer", "fbi"],
 	"homepage": "https://ivory-php.github.io",

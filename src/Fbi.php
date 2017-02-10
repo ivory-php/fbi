@@ -312,7 +312,7 @@ class Fbi {
 	public function display()
 	{
 		$options = $this->_compileOptions();		
-		$command = system('sudo fbi ' .  $this->_compileOptions() . ' ' .$this->file . ' > /dev/null 2>&1');
+		$command = system('sudo fbi ' .  $this->_compileOptions() . ' --noverbose ' .$this->file . ' > /dev/null 2>&1');
 
 		/**
 		 * If $displayFor is set to 0, then the application doesn't need to be terminated. It's showing
