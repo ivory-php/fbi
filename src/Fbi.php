@@ -1,9 +1,6 @@
 <?php
 namespace Ivory;
 
-use String;
-use Int;
-
 /**
  * feh is a command line program for displaying images. This is a PHP class for working with it
  * in a PHP like manner
